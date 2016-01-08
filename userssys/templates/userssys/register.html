@@ -1,0 +1,42 @@
+<DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <title>Реєстрація</title>
+        <meta charset="utf-8"/>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'userssys/style.css' %}" />
+        <meta name="vieport content ="width-device-width, intital-scale =1.0">
+</head>
+<body class="body">
+
+     <header class="mainHead">
+            <nav><ul>
+                <li class="active"><a href="{% url 'polls:index' %}">Головна сторінка</a></li>
+                <li><a href = "#">Новини</a> </li>
+                <li><a href = "#">Завантажити</a> </li>
+                <li><a href = "#">Вікі</a> </li>
+                {% if username %}
+                    <li><a href = "/polls/auth/logout">Вийти({{username}})</a> </li>
+                {%else%}
+                    <li><a href = "/polls/auth/login">Увійти</a> </li>
+                {%endif%}
+            </ul></nav>
+        </header>
+
+    <reg class="regWindow">
+        <h3 class="regTitle">Реєстрація</h3>
+        <form action="/polls/" method="post">
+        {% csrf_token %}
+        <p class="string">Ім'я користувача:</p>
+        <reg class="regFields">{{ form.username }}</reg>
+        <p class="string">Пароль користувача:</p>
+            <reg class="regFields">{{form.password1}}</reg>
+            <p class = "string">Повторіть пароль:</p>
+            <reg class = "regFields">{{form.password2}}</reg>
+        <input type="submit" class = 'button' value="Зареєструватися">
+        </form>
+    </reg>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<DOCTYPE html>
+    <html lang = "en">
+    {% load staticfiles %}
+    <head>
+        <title>Головна сторінка</title>
+        <meta charset="utf-8"/>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'userssys/style.css' %}" />
+        <meta name="vieport content ="width-device-width, intital-scale =1.0">
+    </head>
+    <body class="body">
+        <header class="mainHead">
+            <nav><ul>
+                <li><a href="{% url 'polls:index' %}">Головна сторінка</a></li>
+                <li><a href = "#">Новини</a> </li>
+                <li><a href = "#">Завантажити</a> </li>
+                <li><a href = "#">Вікі</a> </li>
+                {% if username %}
+                    <li><a href = "/polls/auth/logout">Вийти({{username}})</a> </li>
+                {%else%}
+                    <li><a href = "/polls/auth/login">Увійти</a> </li>
+                {%endif%}
+            </ul></nav>
+        </header>
+
+        <!-- Бокова панель з реквізитами втора статті -->
+        <aside class="sideInfo">
+            <h3>Автор статті</h3>
+                    <p class="postAuft"> {{post.posts_auftor_name}}</p>
+        </aside>
+
+        <div class="mainContent">
+            <div class="content">
+                        <article class="typicalArticle">
+                            <header>
+                                <h3><a href="{% url 'polls:detail' post.id %}">{{ post.post_header }}</a></h3>
+                            </header>
+
+                            <footer>
+                                <p class="postInfo">{{post.pub_date}}</p>
+                            </footer>
+
+                                <content>
+                                    <p>{{ post.post_text }}</p>
+                                </content>
+
+                        </article>
+
+                        <c class = "comentTitle">Коментарі :</c>
+
+                        {% for comment in comments %}
+                                <p class="auftCommentName">{{comment.comments_auftor_name}}</p>
+                                <p>{{comment.comment_text}}</p>
+                                <p class="postInfo">
+                                    {{comment.comment_pub_date}}
+                                </p>
+                        {%endfor%}
+                        {%if username%}
+                        <comment class = 'comment'>
+                            <form action="/polls/{{post.id}}/addcomment/" method="post">
+                                {% csrf_token %}
+                                <p class="string">Текст коментаря:</p>
+                                 <reg class="regFields">{{ form.comment_text}}</reg>
+
+                                <input type="submit" class="button" value="Відправити" />
+                            </form>
+
+                        </comment>
+                        {%endif%}
+            </div>
+
+        </div>
+
+        <footer class="mainFooter">
+            <p>Copyright &copy;2015 by Andriy Eromenko</p>
+        </footer>
+    </body>
+</html>

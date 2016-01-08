@@ -1,0 +1,160 @@
+body {
+    background: white url("images/background.gif") no-repeat center bottom;
+    font-size: 80%;
+    font-family: 'Lucida Sans Unicode';
+    line-height: 1.5;
+    text-aline: left;
+}
+
+a{
+    text-decolorations: none;
+}
+
+a:link, a:visited{
+
+    color: #14B7FF;
+}
+
+a:hover,a:active{
+    color: gray;
+}
+
+.body{
+    margin:0 auto;
+    width:75%;
+    clear:both;
+}
+
+.headImg{
+
+}
+
+.mainHead nav{
+
+    background-color: gray;
+    height: 40px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+
+.mainHead nav ul{
+    list-style: none;
+    margin:0 auto;
+}
+
+.mainHead nav ul li{
+
+    float:left;
+    display: inline;
+}
+
+.login{
+    display: inline;
+}
+
+.mainHead nav a:link, .mainHead nav a:visited{
+
+    color: white;
+    display: inline-block;
+    padding: 10px 25px;
+    height: 20px;
+}
+
+.mainHead nav .active a:link,
+.mainHead nav .active a:visited,
+.mainHead nav a:hover,
+.mainHead nav a:active{
+
+        background-color: #FFEE42;
+        color: blue;
+        text-shadow: none;
+        font-size: 110%;
+}
+
+.sideInfo{
+
+    word-break: break-all;
+    width: 20%;
+    float: left;
+    padding: 10px 25px;
+    margin: 2% 0% 0% 0%;
+    background: white;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+
+}
+
+.mainContent{
+    padding: 10px 25px;
+    margin:2% 0% 0% 26%;
+    width:69%;
+
+    line-height:20px;
+    background: white;
+     border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+
+.postInfo{
+
+    font-style: italic;
+    font-size: 75%;
+    color: #919191;
+}
+
+.mainFooter{
+    width: 100%;
+    float: left;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: gray;
+     border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+
+}
+
+.content{
+    width:100%;
+    word-break: break-all;
+     border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+
+}
+
+.comment{
+
+
+     padding: 0px 0px;
+    background-color: gray;
+     border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+.comentTitle{
+     font-size:125%;
+    color: gray;
+}
+
+.button{
+    float:left;
+    width:30%;
+    height:10%;
+     border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    background-color:green;
+    color:white;
+}
+
+.auftCommentName{
+    color: green;
+}
+.postAuft{
+    color: green;
+    font-size: 125%;
+}
