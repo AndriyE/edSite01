@@ -11,8 +11,8 @@ from .forms import CommentForm
 
 
 def index(request):
-    latest_post = Post.objects.order_by('-pub_date')[:1]
     post_list = Post.objects.order_by('-pub_date')
+    latest_post = post_list[:1]
     context = {'latest_post': latest_post,'post_list': post_list,'username':auth.get_user(request).username}
     return render(request, 'polls/index.html', context)
 
