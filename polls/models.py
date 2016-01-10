@@ -15,8 +15,6 @@ class Post(models.Model):
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
-
-
 class Comment(models.Model):
     comments_post = models.ForeignKey(Post)
     comment_text = models.TextField(verbose_name='Текст коментаря')

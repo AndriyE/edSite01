@@ -17,17 +17,16 @@
                 <li><a href = "#">Новини</a> </li>
                 <li><a href = "#">Завантажити</a> </li>
                 <li><a href = "#">Вікі</a> </li>
-                {% if username %}
-                    <li><a href = "/polls/auth/logout">Вийти({{username}})</a> </li>
-                {%else%}
-                    <li><a href = "/polls/auth/login">Увійти</a> </li>
-                {%endif%}
             </ul></nav>
         </header>
 
         <aside class="sideInfo">
             {% block postsAuthorName %}{{ selection.postsAuthorName }}{% endblock %}
-            {% block login %}{%endblock%}
+            {% if username %}
+                {% block privateRoom %}{%endblock%}
+            {%else%}
+                {% block login %}{%endblock%}
+            {%endif%}
             {% block register %}{%endblock%}
         </aside>
 

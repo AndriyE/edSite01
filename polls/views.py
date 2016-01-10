@@ -12,9 +12,21 @@ from .forms import CommentForm
 
 def index(request):
     post_list = Post.objects.order_by('-pub_date')
-    latest_post = post_list[:1]
-    context = {'latest_post': latest_post,'post_list': post_list,'username':auth.get_user(request).username}
-    return render(request, 'polls/index.html', context)
+    auth_name = auth.get_user(request).username
+    context = {'authName':auth_name, 'post_list': post_list,'username':auth.get_user(request).username}
+    context.update(csrf(request))
+    if request.POST:
+        username = request.POST.get('username','')
+        password = request.POST.get('password','')
+        user = auth.authenticate(username=username,password=password)
+        if user is not None:
+            auth.login(request,user)
+            return HttpResponseRedirect('/polls/')
+        else:
+            args['login_error'] = "Аккаунт не знайдено"
+            return render(request,'userssys/login.html',args)
+    else:
+        return render(request, 'polls/index.html', context)
 
 
 
@@ -27,10 +39,6 @@ def addComment(request,post_id):
             comment.comments_auftor_name = auth.get_user(request).username
             form.save()
         return  HttpResponseRedirect('/polls/%s/' %post_id)
-
-
-
-
 
 def post(request,post_id=1):
 
