@@ -1,33 +1,15 @@
-<DOCTYPE html>
-    <html lang = "en">
-    {% load staticfiles %}
-    <head>
-        <title>Головна сторінка</title>
-        <meta charset="utf-8"/>
+{%extends 'main.html'%}
 
-        <link rel="stylesheet" type="text/css" href="{% static 'userssys/style.css' %}" />
-        <meta name="vieport content ="width-device-width, intital-scale =1.0">
-    </head>
-    <body class="body">
-        <header class="mainHead">
-            <nav><ul>
-                <li><a href="{% url 'polls:index' %}">Головна сторінка</a></li>
-                <li><a href = "#">Новини</a> </li>
-                <li><a href = "#">Завантажити</a> </li>
-                <li><a href = "#">Вікі</a> </li>
-                {% if username %}
-                    <li><a href = "/polls/auth/logout">Вийти({{username}})</a> </li>
-                {%else%}
-                    <li><a href = "/polls/auth/login">Увійти</a> </li>
-                {%endif%}
-            </ul></nav>
-        </header>
+{%block postsAuthorName%}
 
-        <!-- Бокова панель з реквізитами втора статті -->
-        <aside class="sideInfo">
-            <h3>Автор статті</h3>
-                    <p class="postAuft"> {{post.posts_auftor_name}}</p>
-        </aside>
+    <h3>Автор статті</h3>
+    <p class="postAuft"> {{post.posts_auftor_name}}</p>
+
+{% endblock %}
+
+{%block posts%}
+
+
 
         <div class="mainContent">
             <div class="content">
@@ -70,9 +52,4 @@
             </div>
 
         </div>
-
-        <footer class="mainFooter">
-            <p>Copyright &copy;2015 by Andriy Eromenko</p>
-        </footer>
-    </body>
-</html>
+{%endblock%}

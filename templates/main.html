@@ -5,7 +5,7 @@
         <title>Головна сторінка</title>
         <meta charset="utf-8"/>
 
-        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'userssys/style.css' %}" />
         <meta name="vieport content ="width-device-width, intital-scale =1.0">
     </head>
     <body class="body">
@@ -25,34 +25,13 @@
             </ul></nav>
         </header>
 
-        <!-- Бокова панель з тексто%м останньої публікації -->
         <aside class="sideInfo">
-        {%block register%}{%endblock%}
+            {% block postsAuthorName %}{{ selection.postsAuthorName }}{% endblock %}
+            {% block login %}{%endblock%}
+            {% block register %}{%endblock%}
         </aside>
 
-        <div class="mainContent">
-            <div class="content">
-                     {% if post_list %}
-                        {% for post in post_list %}
-                        <article class="typicalArticle">
-                            <header>
-                                <h3><a href="{% url 'polls:detail' post.id %}">{{ post.post_header }}</a></h3>
-                            </header>
-
-                            <footer>
-                                <p class="postInfo">{{post.pub_date}}</p>
-                            </footer>
-
-                                <content>
-                                    <p>{{ post.post_text }}</p>
-                                </content>
-                        </article>
-                            {% endfor %}
-                    {% else %}
-                        <p>No polls are available.</p>
-                    {% endif %}
-                </div>
-        </div>
+        {% block posts %}{{ selection.posts }}{% endblock %}
 
         <footer class="mainFooter">
             <p>Copyright &copy;2015 by Andriy Eromenko</p>
