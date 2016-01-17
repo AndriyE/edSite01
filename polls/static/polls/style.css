@@ -158,3 +158,8 @@ a:hover,a:active{
     color: green;
     font-size: 125%;
 }
+
+.image{
+    float:left;
+    width:100%;
+}

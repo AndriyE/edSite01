@@ -6,7 +6,7 @@ from django.core.context_processors import csrf
 from  django.contrib import auth
 
 
-from .models import Post,Comment
+from .models import Post,Comment,Image
 from .forms import CommentForm
 
 
@@ -48,6 +48,7 @@ def post(request,post_id=1):
     args.update(csrf(request))
     args['post'] = Post.objects.get(id = post_id)
     args['username']  = auth.get_user(request).username
+    args['images'] = Image.objects.filter(images_post_id = post_id)
     args['comments'] = Comment.objects.filter(comments_post_id = post_id)
     args['form'] = coment_form
     return  render(request,'polls/detail.html',args)

@@ -23,6 +23,12 @@
                             </footer>
 
                                 <content>
+                                    {% if images%}
+                                    {%for image in images%}
+                                    <img src="{{ image.image.url }}" class="image">
+
+                                    {%endfor%}
+                                    {%endif%}
                                     <p>{{ post.post_text }}</p>
                                 </content>
 

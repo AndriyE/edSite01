@@ -15,6 +15,14 @@ class Post(models.Model):
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
+class Image(models.Model):
+     images_post = models.ForeignKey(Post)
+     image = models.ImageField(upload_to ='images/',
+                               height_field = "height_field",
+                               width_field = "width_field")
+     height_field = models.IntegerField(default = 0)
+     width_field = models.IntegerField(default = 0)
+
 class Comment(models.Model):
     comments_post = models.ForeignKey(Post)
     comment_text = models.TextField(verbose_name='Текст коментаря')
