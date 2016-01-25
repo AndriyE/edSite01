@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-25 12:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\polls\templates\polls\detail.html:6
+msgid "Автор статті"
+msgstr "Article's author"
+
+#: .\polls\templates\polls\detail.html:38
+msgid "Комментарі: "
+msgstr "Comments"
+
+#: .\polls\templates\polls\detail.html:51
+msgid "Текст коментаря: "
+msgstr "Comment's text"
+
+#: .\polls\templates\polls\detail.html:54
+msgid "Відправти"
+msgstr "Enter"
+
+#: .\polls\templates\polls\index.html:5
+#: .\userssys\templates\userssys\login.html:5
+msgid "Авторизація"
+msgstr "Login"
+
+#: .\polls\templates\polls\index.html:8
+#: .\userssys\templates\userssys\login.html:8
+#: .\userssys\templates\userssys\register.html:8
+msgid "Ім'я користувача"
+msgstr "User name"
+
+#: .\polls\templates\polls\index.html:10
+#: .\userssys\templates\userssys\login.html:10
+#: .\userssys\templates\userssys\register.html:10
+msgid "Пароль користувача"
+msgstr "User password"
+
+#: .\polls\templates\polls\index.html:19
+#: .\userssys\templates\userssys\login.html:19
+msgid "Увійти"
+msgstr "Enter"
+
+#: .\polls\templates\polls\index.html:21
+#: .\userssys\templates\userssys\login.html:21
+#: .\userssys\templates\userssys\register.html:5
+msgid "Реєстрація"
+msgstr "Registration"
+
+#: .\polls\templates\polls\index.html:28
+msgid "Вийти"
+msgstr "Quit"
+
+#: .\templates\main.html:19
+msgid "Головна сторінка"
+msgstr "Main Page"
+
+#: .\templates\main.html:20
+msgid "Новини"
+msgstr "News"
+
+#: .\templates\main.html:21
+msgid "Завантажити"
+msgstr "Download"
+
+#: .\templates\main.html:22
+msgid "Вікі"
+msgstr "Wiki"
+
+#: .\userssys\templates\userssys\login.html:14
+msgid "Аккаунт не знайденно"
+msgstr "No account"
+
+#: .\userssys\templates\userssys\register.html:12
+msgid "Повторіть пароль"
+msgstr "Confirm Password"
+
+#: .\userssys\templates\userssys\register.html:14
+msgid "Зареєструватися"
+msgstr "Registr"
