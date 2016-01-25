@@ -45,6 +45,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-us' 'ru-ru' 'uk-ua'
 
 TIME_ZONE = 'UTC'
 
@@ -116,12 +117,20 @@ USE_L10N = True
 
 USE_TZ = True
 
+LANGUAGES = (
+    ('en-us', 'English'),
+    ('ru-ru', 'Russian'),
+    ('uk-ua', 'Ukraine'),
+)
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 _PATH = os.path.abspath(os.path.dirname(__file__))
 
+LOCALE_PATHS = (os.path.join(_PATH, '../locale'),)
 MEDIA_ROOT = os.path.join(_PATH,'files','media')
 MEDIA_URL = '/media/'
 

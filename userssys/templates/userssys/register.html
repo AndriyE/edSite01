@@ -1,17 +1,17 @@
 {%extends 'main.html'%}
-
+{% load i18n %}
 {%block register %}
 
-        <h3 class="regTitle">Реєстрація</h3>
-        <form action="/polls/" method="post">
+        <h3 class="regTitle">{% trans "Реєстрація" %}</h3>
+        <form action="/polls/auth/register/" method="post">
         {% csrf_token %}
-        <p class="string">Ім'я користувача:</p>
+        <p class="string">{% trans "Ім'я користувача" %}</p>
         <reg class="regFields">{{ form.username }}</reg>
-        <p class="string">Пароль користувача:</p>
+        <p class="string">{% trans "Пароль користувача" %}</p>
             <reg class="regFields">{{form.password1}}</reg>
-            <p class = "string">Повторіть пароль:</p>
+            <p class = "string">{% trans "Повторіть пароль" %}</p>
             <reg class = "regFields">{{form.password2}}</reg>
-        <input type="submit" class = 'button' value="Зареєструватися">
+        <input type="submit" class = 'button' value="{% trans "Зареєструватися"%}"/>
         </form>
 
 {%endblock%}

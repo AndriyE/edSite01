@@ -1,13 +1,13 @@
 {%extends "main.html"%}
-
+{% load i18n %}
 {%block login%}
 
-        <h3 class="regTitle">Авторизація</h3>
+        <h3 class="regTitle">{% trans "Авторизація"%}</h3>
         <form action = "/polls/auth/login/" method="post">
         {% csrf_token%}
-            <p class = "string"><label for="username">Ім'я користувача</label></p>
+            <p class = "string"><label for="username">{% trans "Ім'я користувача"%}</label></p>
             <reg class = "regFields"><input type="text" name="username" id="username"></reg>
-            <p class = "string"><label for="password">Пароль користувача</label></p>
+            <p class = "string"><label for="password">{% trans "Пароль користувача"%}</label></p>
             <reg class = "regFields"><input type="password" name="password" id="password"></reg>
             {%if login_error%}
                 <p class="wrongData">
@@ -16,16 +16,16 @@
             {%endif%}
 
 
-            <input class="button" type="submit" value="Увійти">
+            <input class="button" type="submit" value="{% trans "Увійти" %}"/>
 
-            <p class="string"><a href="/polls/auth/register/">Реєстрація</a> </p>
+            <p class="string"><a href="/polls/auth/register/">{% trans "Реєстрація"%}</a> </p>
         </form>
 
 {% endblock %}
 
 {% block privateRoom %}
     <h3 class="regTitle">{{authName}}</h3>
-    <p class="string"><a href="/polls/auth/logout/">Вийти</a> </p>
+    <p class="string"><a href="/polls/auth/logout/">{% trans "Вийти"%}</a> </p>
 {% endblock %}
 
 {%block posts%}

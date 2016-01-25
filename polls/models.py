@@ -15,6 +15,8 @@ class Post(models.Model):
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
+
+
 class Image(models.Model):
      images_post = models.ForeignKey(Post)
      image = models.ImageField(upload_to ='images/',
@@ -22,6 +24,11 @@ class Image(models.Model):
                                width_field = "width_field")
      height_field = models.IntegerField(default = 0)
      width_field = models.IntegerField(default = 0)
+
+class File(models.Model):
+    files_pots = models.ForeignKey(Post)
+    file = models.FileField(upload_to = '/files/')
+
 
 class Comment(models.Model):
     comments_post = models.ForeignKey(Post)

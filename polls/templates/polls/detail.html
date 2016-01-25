@@ -1,8 +1,9 @@
 {%extends 'main.html'%}
+{% load i18n %}
 
 {%block postsAuthorName%}
 
-    <h3>Автор статті</h3>
+    <h3>{% trans "Автор статті" %}</h3>
     <p class="postAuft"> {{post.posts_auftor_name}}</p>
 
 {% endblock %}
@@ -34,7 +35,7 @@
 
                         </article>
 
-                        <p class = "comentTitle">Коментарі :</p>
+                        <p class = "comentTitle">{% trans "Комментарі: "%}</p>
 
                         {% for comment in comments %}
                                 <p class="auftCommentName">{{comment.comments_auftor_name}}</p>
@@ -47,10 +48,10 @@
                         <comment class = 'comment'>
                             <form action="/polls/{{post.id}}/addcomment/" method="post">
                                 {% csrf_token %}
-                                <p class="string">Текст коментаря:</p>
+                                <p class="string">{% trans "Текст коментаря: "%}</p>
                                  <reg class="regFields">{{ form.comment_text}}</reg>
 
-                                <input type="submit" class="button" value="Відправити" />
+                                <input type="submit" class="button" value="{% trans "Відправти"%}"/>
                             </form>
 
                         </comment>

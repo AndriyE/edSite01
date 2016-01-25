@@ -4,10 +4,12 @@ from django.core.urlresolvers import reverse
 from django.views import generic
 from django.core.context_processors import csrf
 from  django.contrib import auth
+from django.utils.translation import ugettext as _
 
 
 from .models import Post,Comment,Image
 from .forms import CommentForm
+
 
 
 def index(request):
@@ -23,11 +25,10 @@ def index(request):
             auth.login(request,user)
             return HttpResponseRedirect('/polls/')
         else:
-            args['login_error'] = "Аккаунт не знайдено"
-            return render(request,'userssys/login.html',args)
+            context['login_error'] = "Акаунт не знайденно"
+            return render(request,'userssys/login.html',context)
     else:
         return render(request, 'polls/index.html', context)
-
 
 
 def addComment(request,post_id):

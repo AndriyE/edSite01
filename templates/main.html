@@ -1,8 +1,10 @@
-<DOCTYPE html>
+<!DOCTYPE html>
     <html lang = "en">
+    {% load i18n %}
     {% load staticfiles %}
+
     <head>
-        <title>Головна сторінка</title>
+        <title></title>
         <meta charset="utf-8"/>
 
         <link rel="stylesheet" type="text/css" href="{% static 'userssys/style.css' %}" />
@@ -13,10 +15,12 @@
 
         <header class="mainHead">
             <nav><ul>
-                <li class="active"><a href="{% url 'polls:index' %}">Головна сторінка</a></li>
-                <li><a href = "#">Новини</a> </li>
-                <li><a href = "#">Завантажити</a> </li>
-                <li><a href = "#">Вікі</a> </li>
+
+                <li class="active"><a href="{% url 'polls:index' %}">{% trans "Головна сторінка" %}</a></li>
+                <li><a href = "#">{% trans "Новини" %}</a> </li>
+                <li><a href = "#">{% trans "Завантажити" %}</a> </li>
+                <li><a href = "#">{% trans "Вікі" %}</a> </li>
+
             </ul></nav>
         </header>
 
@@ -36,4 +40,5 @@
             <p>Copyright &copy;2015 by Andriy Eromenko</p>
         </footer>
     </body>
+
 </html>

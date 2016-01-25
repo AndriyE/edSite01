@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Post,Comment,Image
+from .models import Post,Comment,Image,File
 
 class CommentInline(admin.TabularInline):
     model = Comment
@@ -8,6 +8,11 @@ class CommentInline(admin.TabularInline):
 
 class ImageInline(admin.TabularInline):
     model = Image
+    extra = 0
+
+
+class FileInline(admin.TabularInline):
+    model = File
     extra = 0
 
 
@@ -19,7 +24,7 @@ class PostAdmin(admin.ModelAdmin):
         ('Налаштувати дату публікації',{'fields':['pub_date'],'classes':['collapse']})
     ]
 
-    inlines = [CommentInline,ImageInline]
+    inlines = [ImageInline,FileInline,CommentInline]
 
     list_display = ('post_header','pub_date')
 

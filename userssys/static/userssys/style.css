@@ -138,10 +138,8 @@ a:hover,a:active{
     width:80%;
     margin-top:5%;
     margin-left:10%;
-    height:10%;
-     border-radius: 7px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
+
+
     background-color:#14B7FF;
     color:white;
 }
@@ -162,6 +160,7 @@ a:hover,a:active{
 }
 .btn{
     width:80%;
+    height: 20%;
     float:left;
     margin-left:10%;
     margin-bottom:10%;
@@ -178,6 +177,7 @@ a:hover,a:active{
 }
 
 .wrongData{
+    float: left;
     margin:10%;
     font-size:80%;
     color: red;
@@ -208,5 +208,5 @@ a:hover,a:active{
 .image{
     float:left;
     width:100%;
-    height:50%;
+    border-radius: 7px;
 }
